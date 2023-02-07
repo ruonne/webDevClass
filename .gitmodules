@@ -1,0 +1,9 @@
+[submodule "promosite"]
+	path = promosite
+	url = https://github.com/ruonne/promosite
+[submodule "firstAssignment"]
+	path = firstAssignment
+	url = https://github.com/ruonne/firstAssignment
+[submodule "command-line-refrigerator-lab"]
+	path = command-line-refrigerator-lab
+	url = https://github.com/ruonne/command-line-refrigerator-lab
