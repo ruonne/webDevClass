@@ -1,0 +1,276 @@
+/* global styles */
+
+/* take into account borders and padding into set dimensions of any div/article/box etc */
+
+@font-face {
+
+  font-family: "Kaspert", sans-serif;
+  src: url(font/kaspert.ttf) format("truetype");
+  font-weight: bold;
+
+}
+
+@font-face {
+
+  font-family: "Belagio", sans-serif;
+  src: url(font/belagio.ttf) format("truetype");
+  font-weight: normal;
+
+}
+
+
+@font-face {
+
+  font-family: "Blankids", sans-serif;
+  src: url(font/blankids.ttf) format("truetype");
+  font-weight: normal;
+
+}
+
+@font-face {
+
+  font-family: "Regfa", sans-serif;
+  src: url(font/regfa.otf) format("opentype");
+  font-weight: normal;
+
+}
+
+
+* {
+  box-sizing:border-box;
+}
+
+/* remove the default margin */
+html, body {
+  margin: 0;
+  background: #fae7ec; 
+
+}
+
+/*scale the images*/
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+/*top gif with text */
+div.hero{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+
+
+/* the buttons w text, inside the box thumbnails with the images */
+a.info {
+  padding: 10px 20px;
+  border: 3px solid #b95b5a;
+  border-radius: 10px;
+  background-color: #883c43 ;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/
+/*what holds the text on the gif*/
+.hero article {
+  position: absolute;
+  bottom: 36%;
+  right: 44%;
+  width: 50%;
+  padding: 10%;
+  
+}
+
+/* the text in the gif on the top part */
+.hero article h1 {
+
+white-space: nowrap;
+font-family: "Kaspert", courier;
+font-size: 60px;
+color: #ADB5CE;
+
+}
+
+
+/* the rando middle section i made */
+.middle h1 { 
+
+color: #ADB5CE;
+text-align: center;
+font-family: "Kaspert", courier;
+ }
+
+
+ .middle p { 
+
+color: black;
+text-align: center;
+font-family: "Kaspert", courier;
+
+ }
+
+ .mask p {
+
+  width: 90%;
+  font-size: 30px;
+  line-height: 1.6;
+
+}
+
+.mask a {
+
+  width: 60%;
+  font-size: 30px;
+  line-height: 1.5;
+
+}
+
+
+/*faux*/
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+/*faux*/
+.thumb {
+  position: relative;
+  /* width: 30%; */
+  flex-basis: 30%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  /* flex: 0 0 30%; */
+  overflow: hidden;
+  margin: 24px 0;
+}
+/*faux*/
+/* prepare initial state for images' transform */
+.thumb img {
+  transform: scale(1);
+  transform: rotate(0deg);
+  transition: all 1s ease;
+}
+/*faux*/
+.thumb:hover img {
+  transform: scale(1.5)rotate(-20deg);
+}
+/*faux*/
+.mask {
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background-color: rgba(255,255,255,0.5);
+  transition: all 1s ease-in-out;
+}
+/*faux*/
+.mask h2 {
+  margin: 0;
+}
+/*faux*/
+.mask p {
+  font-style: italic;
+}
+/*faux*/
+.thumb:hover .mask {
+  opacity: 1;
+}
+/*faux*/
+.thumb .mask h2,
+.thumb .mask p,
+.thumb .mask a {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 1s ease-in-out;
+}
+/*faux*/
+.thumb:hover .mask h2,
+.thumb:hover .mask p,
+.thumb:hover .mask a {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+/* MEDIA QUERIES */
+
+/* this was a soul-ache... */
+
+/* Smaller than ipad classic in portrait so we will assume mobile  */
+@media only screen and (max-width:767px){
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+.hero img {
+
+  width: 300%;
+  height: auto;
+
+}
+
+.hero article {
+  position: absolute;
+  bottom: 46%;
+  right: 56%;
+  width: 50%;
+  padding: 10%;
+  
+}
+
+.hero article h1 {
+
+  overflow-wrap: break-word;
+/*  white-space: nowrap;*/
+  font-family: "Kaspert", courier;
+  font-size: 17px;
+  color: #ADB5CE; 
+  left: 0px;
+  right: 0;
+
+}
+
+
+.mask p {
+
+  width: 90%;
+  font-size: 16px;
+  line-height: 1.6;
+
+}
+
+.mask a {
+
+  width: 88%;
+  font-size: 16px;
+  line-height: 1.5;
+
+}
+
+
+
+  .container {
+    flex-direction: column;
+    padding: 12px;
+    width: 99%;
+  
+}
