@@ -1,0 +1,184 @@
+/* the animation code I got from: https://www.youtube.com/watch?v=v2QMoZz0ZXc */
+
+* 
+
+{
+
+	margin: 0;
+	padding: 0;
+
+}
+
+h1 
+{
+
+	color: #ccd4bf;
+	height: 130px;
+	position: absolute;
+	bottom: 870px;
+	left:700px;
+	font-size: 130px;
+	font-family: "Copperplate", "Papyrus", fantasy;
+
+}
+
+h3 
+{
+
+	color: #ccd4bf;
+	height: 130px;
+	position: absolute;
+	bottom: 740px;
+	left:750px;
+	font-size: 20px;
+	font-family: "Copperplate", "Papyrus", fantasy;
+
+}
+
+a 
+{
+
+	color:#ccd4bf;
+}
+
+
+body 
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-image: url("loraxx.jpeg");
+
+}
+
+
+h5
+{
+	color: #67001a; 
+	position: absolute;
+	bottom: 10px;
+	left: 14px; 
+	font-size: 40px;
+	font-family: "Copperplate", "Papyrus", fantasy;
+}
+
+p 
+{
+	color: whitesmoke; 
+	position: absolute;
+	bottom: 60px;
+	left: 120px;
+	font-size: 33px;
+	font-family: "Copperplate", "Papyrus", fantasy;
+
+}
+
+h4
+{
+
+	color: whitesmoke;
+	position: absolute;
+	bottom: 20px;
+	left: 120px;
+	font-size: 33px;
+	font-family: "Copperplate", "Papyrus", fantasy;
+}
+
+/* from https://www.youtube.com/watch?v=-Nu_fgBg3P0 and class notes from Feb 7 2023*/
+
+.hover 
+{
+	box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+	position: absolute;
+	left: 840px;
+	bottom: 230px;
+	width: 200px;
+	height: 100px;
+	border: 7px outset #67001a;
+	animation: 1s clockwise infinite;
+
+}
+
+
+.loader
+{
+
+	position: relative;
+	bottom:30px;
+	left:40px;
+}
+
+.loader span
+{
+
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	background: #0f0;
+	display: block;
+	animation:animate 4s linear infinite;
+	box-shadow: 0 0 10px #0f0,
+	0 0 40px #0f0,
+	0 0 80px #0f0,
+	0 0 120px #0f0,
+	0 0 160px #0f0;
+
+	animation-delay: calc(-0.5s * var(--i));
+	transform-origin: bottom;
+
+
+}
+@keyframes animate
+{
+
+	0%
+	{
+		top: 0;
+		left: 150px;
+		transform:scaleY(1);
+		filter:hue-rotate(0deg);
+
+	}
+
+	2%
+	{
+		top: 0;
+		left: 150px;
+		transform:scaleY(0.4);		
+	}
+
+	10%
+	{
+		top: 0;
+		left: 80px;
+		transform:scaleY(1);		
+	}
+
+	40%
+	{
+		top: 0;
+		left: -150px;
+	}
+
+	60%
+	{
+		top: -200;
+		left: -150px;
+	}
+
+	85%
+	{
+		top: -200;
+		left: -150px;
+	}
+	100%
+	{
+		top: 0;
+		left: 150px;
+		filter:hue-rotate(360deg);
+
+	}
+
+
+}
